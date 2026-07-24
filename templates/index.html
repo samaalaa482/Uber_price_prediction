@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Uber Fare Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🚖 Uber Fare Prediction</h1>
+
+    <form action="/predict" method="POST">
+
+        <label>Pickup Longitude</label><br>
+        <input type="number" step="any" name="pickup_longitude" required><br><br>
+
+        <label>Dropoff Longitude</label><br>
+        <input type="number" step="any" name="dropoff_longitude" required><br><br>
+
+        <label>Dropoff Latitude</label><br>
+        <input type="number" step="any" name="dropoff_latitude" required><br><br>
+
+        <label>Year</label><br>
+        <input type="number" name="year" required><br><br>
+
+        <label>Distance</label><br>
+        <input type="number" step="any" name="distance" required><br><br>
+
+        <button type="submit">Predict Fare</button>
+
+    </form>
+
+    <br>
+
+    <div class="result">
+    {{ prediction_text }}
+</div>
+ </div>
+
+</body>
+
+</html>
